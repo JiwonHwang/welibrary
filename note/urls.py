@@ -13,3 +13,4 @@ urlpatterns = [
     # ex: /note/post/5/edit/
     url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
 ]
+
