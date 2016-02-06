@@ -10,13 +10,11 @@ class PostAdmin(admin.ModelAdmin):
         was_published_recently.boolean = True
         was_published_recently.short_description = 'Published recently?'
 
-    list_display = ('id', 'author', 'title', 'created_date',)
+    list_display = ('id', 'author', 'title', 'postcategory', 'created_date',)
     list_filter = ['published_date']
     search_fields = ['title']
-    search_fields = ['published_date']
 
 
-
-admin.site.register(Post, PostAdmin)
+admin.site.register(Post, PostAdmin, )
 
 

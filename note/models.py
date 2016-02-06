@@ -9,6 +9,18 @@ from django.utils import timezone
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
+
+    # post categories
+    PYTHON = "python"
+    DJANGO = "django"
+    FRONTEND = "frontend"
+    POSTCATEGORY = (
+        (PYTHON, 'python'),
+        (DJANGO, 'django'),
+        (FRONTEND, 'frontend'),
+        )
+    postcategory = models.CharField(max_length=10, choices=POSTCATEGORY, default=PYTHON)
+
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -18,6 +30,8 @@ class Post(models.Model):
     link = models.URLField(blank=True)
 
 
+
+
     def publish(self):
         self.published_date = timezone.now()
         self.save()
@@ -25,3 +39,5 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
