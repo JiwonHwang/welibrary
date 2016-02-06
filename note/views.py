@@ -19,24 +19,6 @@ def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'note/post_list.html', {'post_list': posts})
 
-# ------ python, Django, Frontend 리스트 -----
-def python_list(request):
-    python_posts = PythonPosts.objects.filter(postcategory="Python").filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'note/python_list.html', { 'python_list': python_posts})
-
-
-def django_list(request):
-    django_posts = DjangoPosts.objects.filter(postcategory="Django").filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'note/django_list', {'django_list': django_posts})
-
-
-def frontend_list(request):
-    frontend_posts = FrontendPosts.objects.filter(postcategory="Frontend").filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'note/frontend_list', {'frontend_list': frontend_posts})
-
-# ------
-
-
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -44,7 +26,7 @@ def post_detail(request, pk):
         'post': post
         })
 
-
+# post_new , post_eidt 은 아직 사용하지 않아도 됨. 새로운 Post는 일단 admin에서 추가하기
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -71,6 +53,46 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'note/post_edit.html', {'form': form})
+
+
+# ------ python, Django, Frontend 리스트 & detail views -----
+def python_list(request):
+    python_posts = Post.objects.filter(postcategory="Python").filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'note/python_list.html', {'python_list': python_posts})
+
+
+def python_detail(request, pk):
+    python_post = get_object_or_404(Post, pk=pk)
+    return render(request, 'note/python_detail.html', {
+        'python_post': python_post
+        })
+
+#----------------------------------------------------
+
+def django_list(request):
+    django_posts = Post.objects.filter(postcategory="Django").filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'note/django_list.html', {'django_list': django_posts})
+
+
+def django_detail(request, pk):
+    django_post = get_object_or_404(Post, pk=pk)
+    return render(request, 'note/django_detail.html', {
+        'django_post': django_post
+        })
+
+#----------------------------------------------------
+
+def frontend_list(request):
+    frontend_posts = Post.objects.filter(postcategory="Frontend").filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'note/frontend_list.html', {'frontend_list': frontend_posts})
+
+
+def frontend_detail(request, pk):
+    frontend_post = get_object_or_404(Post, pk=pk)
+    return render(request, 'frontend_detail.html', {
+        'frontend_post' : frontend_post
+        })
+# ------
 
 
 # [   ] def contact
