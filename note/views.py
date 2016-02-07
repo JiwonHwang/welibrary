@@ -54,6 +54,7 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'note/post_edit.html', {'form': form})
 
+
 # ------ python, Django, Frontend 리스트 & detail views -----
 def python_list(request):
     python_posts = Post.objects.filter(postcategory="python").filter(published_date__lte=timezone.now()).order_by('-published_date')
