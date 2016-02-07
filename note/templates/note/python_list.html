@@ -1,13 +1,14 @@
 {% extends 'note/base.html' %}
 
 {% block content %}
-    {% for post in post_list %}
+    {% for python_post in python_posts %}
         <div class="post">
             <div class="date">
-                {{ post.published_date }}
+                {{ python_post.published_date }}
             </div>
-            <h1><a href="{% url "note.views.python_detail" pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.|linebreaks }}</p>
+            <h1><a href="{% url "note.views.python_detail" pk=python_post.pk %}">{{ python_post.title }}</a></h1>
+            <p>{{ python_post.|linebreaks }}</p>
         </div>
     {% endfor %}
 {% endblock content %}
+

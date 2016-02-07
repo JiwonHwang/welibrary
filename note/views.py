@@ -55,10 +55,24 @@ def post_edit(request, pk):
     return render(request, 'note/post_edit.html', {'form': form})
 
 
+
+# # 아래 부분은 지우기 two defs
+# def post_list(request):
+#     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+#     return render(request, 'note/post_list.html', {'post_list': posts})
+
+
+# def post_detail(request, pk):
+#     post = get_object_or_404(Post, pk=pk)
+#     return render(request, 'note/post_detail.html', {
+#         'post': post
+#         })
+
+
 # ------ python, Django, Frontend 리스트 & detail views -----
 def python_list(request):
-    python_posts = Post.objects.filter(postcategory="Python").filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'note/python_list.html', {'python_list': python_posts})
+    python_posts = Post.objects.filter(postcategory="python").filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'note/python_list.html', {'python_posts': python_posts})
 
 
 def python_detail(request, pk):
@@ -70,8 +84,8 @@ def python_detail(request, pk):
 #----------------------------------------------------
 
 def django_list(request):
-    django_posts = Post.objects.filter(postcategory="Django").filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'note/django_list.html', {'django_list': django_posts})
+    django_posts = Post.objects.filter(postcategory="django").filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'note/django_list.html', {'django_posts': django_posts})
 
 
 def django_detail(request, pk):
@@ -83,7 +97,7 @@ def django_detail(request, pk):
 #----------------------------------------------------
 
 def frontend_list(request):
-    frontend_posts = Post.objects.filter(postcategory="Frontend").filter(published_date__lte=timezone.now()).order_by('-published_date')
+    frontend_posts = Post.objects.filter(postcategory="frontend").filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'note/frontend_list.html', {'frontend_list': frontend_posts})
 
 

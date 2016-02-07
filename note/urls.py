@@ -26,13 +26,13 @@ urlpatterns = [
     # ex: /note/django/
     url(r'^django/$', views.django_list, name='django_list'),
     # ex: /note/django/#
-    url(r'^django/(?P<pk>[0-9]+)/$', views.django_list, name='django_list'),
+    url(r'^django/(?P<pk>[0-9]+)/$', views.django_list, name='django_detail'),
 
 
     # ex: /note/frontend/
     url(r'^frontend/$', views.frontend_list, name='frontend_list'),
     # ex: /note/frontend/#
-    url(r'^frontend_list/(?P<pk>[0-9]+)/$', views.frontend_list, name='frontend_list'),
+    url(r'^frontend/(?P<pk>[0-9]+)/$', views.frontend_list, name='frontend_detail'),
 ]
 
 

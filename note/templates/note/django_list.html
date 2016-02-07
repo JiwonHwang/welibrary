@@ -1,24 +1,15 @@
 {% extends 'note/base.html' %}
 
-# [ ] list.html 에 list 나오게 하기
-# [ ] 그 다음에 각 post 와 post_detail 연결해주기
-
-
-<html>
-{% if user.is_authenticated %}
-    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-{% endif %}
-</html>
-
-
 {% block content %}
-    {% for django_post in django_list %}
+    {% for django_post in django_posts %}
         <div class="post">
             <div class="date">
                 {{ django_post.published_date }}
             </div>
-            <h1><a href="{% url "note.views.django_detail" pk=post.pk %}">{{ django_post.title }}</a></h1>
-            <p>{{ django_post | linebreaks }}</p>
+            <h1><a href="{% url "note.views.django_detail" pk=django_post.pk %}">{{ django_post.title }}</a></h1>
+            <p>{{ django_post.|linebreaks }}</p>
         </div>
     {% endfor %}
-{% endblock content%}
+{% endblock content %}
+
+
