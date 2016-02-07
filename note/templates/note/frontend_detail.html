@@ -2,12 +2,12 @@
 
 {% block content %}
     <div>
-        {% if django_post.published_date %}
-            {{ django_post.publisehd_date }}
+        {% if frontend_post.published_date %}
+            {{ frontend_post.publisehd_date }}
         {% endif %}
-         <h1>{{ django_post.title }}</h1>
-         <p>{{ django_post.published_date }}</p>
-         <p>{{ django_post.content|linebreaks }}</p>
-         <p>{{ django_post.link }}</p>
+         <h1>{{ frontend_post.title }}</h1>
+         <p>{{ frontend_post.published_date }}</p>
+         <p>{{ frontend_post.content|linebreaks }}</p>
+         <p>{{ frontend_post.link }}</p>
      </div>
 {% endblock %}

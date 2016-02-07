@@ -54,21 +54,6 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'note/post_edit.html', {'form': form})
 
-
-
-# # 아래 부분은 지우기 two defs
-# def post_list(request):
-#     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-#     return render(request, 'note/post_list.html', {'post_list': posts})
-
-
-# def post_detail(request, pk):
-#     post = get_object_or_404(Post, pk=pk)
-#     return render(request, 'note/post_detail.html', {
-#         'post': post
-#         })
-
-
 # ------ python, Django, Frontend 리스트 & detail views -----
 def python_list(request):
     python_posts = Post.objects.filter(postcategory="python").filter(published_date__lte=timezone.now()).order_by('-published_date')
@@ -98,12 +83,12 @@ def django_detail(request, pk):
 
 def frontend_list(request):
     frontend_posts = Post.objects.filter(postcategory="frontend").filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'note/frontend_list.html', {'frontend_list': frontend_posts})
+    return render(request, 'note/frontend_list.html', {'frontend_posts': frontend_posts})
 
 
 def frontend_detail(request, pk):
     frontend_post = get_object_or_404(Post, pk=pk)
-    return render(request, 'frontend_detail.html', {
+    return render(request, 'note/frontend_detail.html', {
         'frontend_post' : frontend_post
         })
 # ------
