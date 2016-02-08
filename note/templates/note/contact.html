@@ -1,2 +1,15 @@
 {% extends 'note/base.html' %}
+<!--
+<html>
+    <a href="{% url 'new_contact' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+</html> -->
+{% block content %}
+    <h1>Contact</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        <!-- 아래 부분 좀 의문임. contact_form 과 관련되어있다는 점을 어떻게 명시할 수 있지? -->
+        {{ contact_form.as_p }}
+        <button type="submit" class="save btn btn-default">Send</button>
+    </form>
+{% endblock content %}
+
 

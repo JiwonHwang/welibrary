@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 
-from .forms import PostForm
+from .forms import PostForm, ContactForm
 
-from .models import Post
+from .models import Post, Contact
 
 
 # main page
@@ -26,20 +26,34 @@ def post_detail(request, pk):
         'post': post
         })
 
-# post_new , post_eidt 은 아직 사용하지 않아도 됨. 새로운 Post는 일단 admin에서 추가하기
+# post_new , post_eidt 은 아직  site에서 사용하지 않아도 됨. 새로운 Post는 일단 admin에서 추가하기
 def post_new(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        post_form = PostForm(request.POST)
         if form.is_valid():
             post=form.save(commit=False)
-            # post.author=request.user
+            post.author=request.user
             post.published_date=timezone.now()
             post.save()
-            return redirect('/note/post/list/', pk=post.pk)
+            return redirect('/note/post_list.html', pk=post.pk)
     else:
         form = PostForm()
-    return render(request, 'note/post_new.html', {'form': form})
+    return render(request, 'note/post_new.html', {'post_form': post_form})
 
+#==================================================
+
+def new_contact(request):
+    if request.method == "POST":
+        contact_form = ContactForm(request.POST)
+        if form.is_valid():
+            contact=form.save(commit=False)
+            contact.save()
+            return render(request, 'note/contact.html', {'contact_form': contact_form})
+    else:
+        contact_form = PostForm()
+    return render(request, 'note/contact.html', {'contact_form': contact_form})
+
+#===================
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -96,9 +110,9 @@ def frontend_detail(request, pk):
 
 
 # [   ] def contact
-# 1.  models.py - class Contact
-# 2.  forms.py - make form for contact
-# 3. add contact form at views.py
-# 4. check the link at urls.py
+# [  O ] 1.  models.py - class Contact
+# [  O ] 2.  forms.py - make form for contact
+# [  O? ] 3. add contact form at views.py
+# [   ] 4. check the link at urls.py
 
 
