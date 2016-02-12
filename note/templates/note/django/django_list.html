@@ -1,0 +1,15 @@
+{% extends 'note/base.html' %}
+
+{% block content %}
+    {% for django_post in django_posts %}
+        <div class="post">
+            <div class="date">
+                {{ django_post.published_date }}
+            </div>
+            <h1><a href="{% url "note.views.django_detail" pk=django_post.pk %}">{{ django_post.title }}</a></h1>
+            <p>{{ django_post.|linebreaks }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
+
+

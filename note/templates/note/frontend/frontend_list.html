@@ -1,0 +1,13 @@
+{% extends 'note/base.html' %}
+
+{% block content %}
+    {% for frontend_post in frontend_posts %}
+        <div class="post">
+            <div class="date">
+            {{ frontend_post.published_date }}
+            </div>
+            <h1><a href="{% url "note.views.frontend_detail" pk=frontend_post.pk %}">{{ frontend_post.title }}</a></h1>
+            <p>{{ frontend_post.|linebreaks }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}

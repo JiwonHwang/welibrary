@@ -17,12 +17,12 @@ def about(request):
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'note/post_list.html', {'post_list': posts})
+    return render(request, 'note/post/post_list.html', {'post_list': posts})
 
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'note/post_detail.html', {
+    return render(request, 'note/post/post_detail.html', {
         'post': post
         })
 
@@ -35,10 +35,10 @@ def post_new(request):
             post.author=request.user
             post.published_date=timezone.now()
             post.save()
-            return redirect('/note/post_list.html', pk=post.pk)
+            return redirect('/note/post/post_list.html', pk=post.pk)
     else:
         form = PostForm()
-    return render(request, 'note/post_new.html', {'post_form': post_form})
+    return render(request, 'note/post/post_new.html', {'post_form': post_form})
 
 #==================================================
 
@@ -66,18 +66,18 @@ def post_edit(request, pk):
             return redirect('note.views.post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
-    return render(request, 'note/post_edit.html', {'form': form})
+    return render(request, 'note/post/post_edit.html', {'form': form})
 
 
 # ------ python, Django, Frontend 리스트 & detail views -----
 def python_list(request):
     python_posts = Post.objects.filter(postcategory="python").filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'note/python_list.html', {'python_posts': python_posts})
+    return render(request, 'note/python/python_list.html', {'python_posts': python_posts})
 
 
 def python_detail(request, pk):
     python_post = get_object_or_404(Post, pk=pk)
-    return render(request, 'note/python_detail.html', {
+    return render(request, 'note/python/python_detail.html', {
         'python_post': python_post
         })
 
@@ -85,12 +85,12 @@ def python_detail(request, pk):
 
 def django_list(request):
     django_posts = Post.objects.filter(postcategory="django").filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'note/django_list.html', {'django_posts': django_posts})
+    return render(request, 'note/django/django_list.html', {'django_posts': django_posts})
 
 
 def django_detail(request, pk):
     django_post = get_object_or_404(Post, pk=pk)
-    return render(request, 'note/django_detail.html', {
+    return render(request, 'note/django/django_detail.html', {
         'django_post': django_post
         })
 
@@ -98,12 +98,12 @@ def django_detail(request, pk):
 
 def frontend_list(request):
     frontend_posts = Post.objects.filter(postcategory="frontend").filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'note/frontend_list.html', {'frontend_posts': frontend_posts})
+    return render(request, 'note/frontend/frontend_list.html', {'frontend_posts': frontend_posts})
 
 
 def frontend_detail(request, pk):
     frontend_post = get_object_or_404(Post, pk=pk)
-    return render(request, 'note/frontend_detail.html', {
+    return render(request, 'note/frontend/frontend_detail.html', {
         'frontend_post' : frontend_post
         })
 # ------
