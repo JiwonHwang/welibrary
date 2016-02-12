@@ -1,8 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-
 from .forms import PostForm, ContactForm
-
 from .models import Post, Contact
 
 
@@ -22,23 +20,36 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'note/post/post_detail.html', {
-        'post': post
-        })
+    return render(request, 'note/post/post_detail.html', {'post': post})
 
-# post_new , post_eidt 은 아직  site에서 사용하지 않아도 됨. 새로운 Post는 일단 admin에서 추가하기
+
 def post_new(request):
     if request.method == "POST":
-        post_form = PostForm(request.POST)
+        form= PostForm(request.POST)
         if form.is_valid():
             post=form.save(commit=False)
             post.author=request.user
             post.published_date=timezone.now()
             post.save()
-            return redirect('/note/post/post_list.html', pk=post.pk)
+            return redirect('note.views.post_detail', pk=post.pk)
     else:
         form = PostForm()
-    return render(request, 'note/post/post_new.html', {'post_form': post_form})
+    return render(request, 'note/post/post_edit.html', {'form': form})
+
+
+def post_edit(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method=="POST":
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author=request.user
+            post.published_date=timezone.now()
+            post.save()
+            return redirect('note.views.post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'note/post/post_edit.html', {'form': form})
 
 #==================================================
 
@@ -52,21 +63,6 @@ def new_contact(request):
     else:
         contact_form = PostForm()
     return render(request, 'note/contact.html', {'contact_form': contact_form})
-
-#===================
-
-def post_edit(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    if request.method=="POST":
-        form = PostForm(request.POST, instance=post)
-        if form.is_valid():
-            # post.author=request.user
-            post.published_date=timezone.now()
-            post.save()
-            return redirect('note.views.post_detail', pk=post.pk)
-    else:
-        form = PostForm(instance=post)
-    return render(request, 'note/post/post_edit.html', {'form': form})
 
 
 # ------ python, Django, Frontend 리스트 & detail views -----
@@ -90,9 +86,7 @@ def django_list(request):
 
 def django_detail(request, pk):
     django_post = get_object_or_404(Post, pk=pk)
-    return render(request, 'note/django/django_detail.html', {
-        'django_post': django_post
-        })
+    return render(request, 'note/django/django_detail.html', {'django_post': django_post})
 
 #----------------------------------------------------
 

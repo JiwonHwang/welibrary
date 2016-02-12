@@ -1,9 +1,60 @@
-body {
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  background-color: #DFF0DA;
-
+h1 a {
+    color: #04B4AE;
 }
+
+body {
+    padding-left: 15px;
+    background-color: #DFF0DA;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .container {
+}
+
+.page-header {
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #0B4C5F;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Open Sans', sans-serif
+}
+
+.date {
+    float: right;
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 80%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #380B61;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #380B61;
 }

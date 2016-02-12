@@ -45,6 +45,8 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
+    <!-- font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="{% static 'css/note.css' %}">
 
@@ -83,9 +85,34 @@
               </ul>
             </li>
             <li><a href="/contact/">Contact</a></li>
+
+            <!-- 새글 추가, 보안 -->
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+          {% if user.is_authenticated %}
+              <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+          {% endif %}
+
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
+    <!-- 아래부분 삽입  -->
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% for post in posts %}
+                    <div class="post">
+                        <div class="date">
+                            {{ post.published_date }}
+                        </div>
+                        <h1><a href="">{{ post.title }}</a></h1>
+                        <p>{{ post.text|linebreaks }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+ <!-- 위 부분 삽입 -->
 
     {% block content %}
     {% endblock %}

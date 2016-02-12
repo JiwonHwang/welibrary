@@ -30,8 +30,6 @@ class Post(models.Model):
     link = models.URLField(blank=True)
 
 
-
-
     def publish(self):
         self.published_date = timezone.now()
         self.save()
