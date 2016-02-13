@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'^post/(?P<pk>[0-9]+)/publish/$', views.post_publish, name='post_publish'),
     # ex: /post/#/remove/
     url(r'^post/(?P<pk>[0-9]+)/remove/$', views.post_remove, name='post_remove'),
+    # ex: /post/#/comment/
+    url(r'^post/(?P<pk>[0-9]+)/comment/$', views.add_comment_to_post, name='add_comment_to_post'),
 
     # list of each category, need to ad detail.html of each-------------------------
     # ex: /python/
@@ -44,14 +46,15 @@ urlpatterns = [
     url(r'^frontend/(?P<pk>[0-9]+)/$', views.frontend_detail, name='frontend_detail'),
 
 
-    # --- 기존 ----
-    # ex: /contact/
-    #url(r'^contact/$', views.new_contact, name='new_contact'),
 
-    #---수정 중---
-    #ex: /contact/contact/new/
+    # ex: /contact/contact/new/
     url(r'^contact/new/$', views.contact_new, name='contact_new'),
 
+
+    # ex: /comment/#/approve/
+    url(r'^comment/(?P<pk>[0-9]+)/approve/$', views.comment_approve, name='comment_approve'),
+    # ex: /comment/#/remove/
+    url(r'^comment/(?P<pk>[0-9]+)/remove/$', views.comment_remove, name='comment_remove'),
 ]
 
 
