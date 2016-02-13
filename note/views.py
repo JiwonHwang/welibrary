@@ -24,6 +24,7 @@ def post_detail(request, pk):
     return render(request, 'note/post/post_detail.html', {'post': post})
 
 
+@login_required
 def post_new(request):
     if request.method == "POST":
         form= PostForm(request.POST)
@@ -37,6 +38,7 @@ def post_new(request):
     return render(request, 'note/post/post_edit.html', {'form': form})
 
 
+@login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method=="POST":
@@ -52,17 +54,20 @@ def post_edit(request, pk):
     return render(request, 'note/post/post_edit.html', {'form': form})
 
 
+@login_required
 def post_draft_list(request):
     posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
     return render(request, 'note/post/post_draft_list.html', {'posts': posts})
 
 
+@login_required
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()
     return redirect('note.views.post_detail', pk=pk)
 
 
+@login_required
 def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
@@ -84,6 +89,7 @@ def python_detail(request, pk):
 #----------------------------------------------------
 
 def django_list(request):
+    print('sdfghjkhgfdfghjjhgfddfghjkjhgfdsdfghj')
     django_posts = Post.objects.filter(postcategory="django").filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'note/django/django_list.html', {'django_posts': django_posts})
 
