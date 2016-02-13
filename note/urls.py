@@ -3,10 +3,12 @@ from . import views
 
 
 urlpatterns = [
-    # ex: /note/
+    # ex: /
     url(r'^$', views.index, name='index'),
-    # ex: /note/about/
+    # ex: /about/
     url(r'^about/$', views.about, name='about'),
+    # ex: /drafts/
+    url(r'^drafts/$', views.post_draft_list, name='post_draft_list'),
 
 
     # post list and details ex----------------------------
@@ -18,6 +20,10 @@ urlpatterns = [
     url(r'^post/new/$', views.post_new, name='post_new'),
     # ex: /post/#/edit/
     url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
+    # ex: /post/#/publish/
+    url(r'^post/(?P<pk>[0-9]+)/publish/$', views.post_publish, name='post_publish'),
+    # ex: /post/#/remove/
+    url(r'^post/(?P<pk>[0-9]+)/remove/$', views.post_remove, name='post_remove'),
 
     # list of each category, need to ad detail.html of each-------------------------
     # ex: /python/

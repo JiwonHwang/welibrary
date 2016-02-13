@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .forms import PostForm, ContactForm
+from django.contrib.auth.decorators import login_required
 from .models import Post, Contact
 
 
@@ -29,7 +30,6 @@ def post_new(request):
         if form.is_valid():
             post=form.save(commit=False)
             post.author=request.user
-            post.published_date=timezone.now()
             post.save()
             return redirect('note.views.post_detail', pk=post.pk)
     else:
@@ -51,6 +51,22 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'note/post/post_edit.html', {'form': form})
 
+
+def post_draft_list(request):
+    posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
+    return render(request, 'note/post/post_draft_list.html', {'posts': posts})
+
+
+def post_publish(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.publish()
+    return redirect('note.views.post_detail', pk=pk)
+
+
+def post_remove(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    return redirect('note.views.post_list')
 
 
 # ------ python, Django, Frontend 리스트 & detail views -----
@@ -86,14 +102,6 @@ def frontend_list(request):
 def frontend_detail(request, pk):
     frontend_post = get_object_or_404(Post, pk=pk)
     return render(request, 'note/frontend/frontend_detail.html', {'frontend_post' : frontend_post})
-
-
-
-# [   ] def contact
-# [  O ] 1.  models.py - class Contact
-# [  O ] 2.  forms.py - make form for contact
-# [  O? ] 3. add contact form at views.py
-# [   ] 4. check the link at urls.py
 
 
 def contact_new(request):
