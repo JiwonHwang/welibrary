@@ -38,7 +38,7 @@ urlpatterns = [
     url(r'^frontend/(?P<pk>[0-9]+)/$', views.frontend_detail, name='frontend_detail'),
 
 
-    # ex: /note/contact/
+    # ex: /contact/
     url(r'^contact/$', views.new_contact, name='new_contact'),
 ]
 

@@ -59,10 +59,10 @@ def new_contact(request):
         if form.is_valid():
             contact=form.save(commit=False)
             contact.save()
-            return render(request, 'note/contact.html', {'contact_form': contact_form})
+            return render(request, 'note/contact/contact.html', {'contact_form': contact_form})
     else:
         contact_form = PostForm()
-    return render(request, 'note/contact.html', {'contact_form': contact_form})
+    return render(request, 'note/contact/contact.html', {'contact_form': contact_form})
 
 
 # ------ python, Django, Frontend 리스트 & detail views -----
