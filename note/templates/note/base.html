@@ -84,13 +84,16 @@
                 <li><a href="http://djangogirlscodecamp.github.io/" target="_blank">Django Girls Code Camp</a></li> -->
               </ul>
             </li>
-            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/contact/new/">Contact</a></li>
 
             <!-- 새글 추가, 보안 -->
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
           {% if user.is_authenticated %}
               <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
           {% endif %}
+
+          <a href="{% url 'contact_new' %}" class="top-menu"><span class="glyphicon glyphicon-envelope"></span></a>
+
 
         </div><!--/.nav-collapse -->
       </div>

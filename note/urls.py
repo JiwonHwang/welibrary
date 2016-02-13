@@ -38,8 +38,14 @@ urlpatterns = [
     url(r'^frontend/(?P<pk>[0-9]+)/$', views.frontend_detail, name='frontend_detail'),
 
 
+    # --- 기존 ----
     # ex: /contact/
-    url(r'^contact/$', views.new_contact, name='new_contact'),
+    #url(r'^contact/$', views.new_contact, name='new_contact'),
+
+    #---수정 중---
+    #ex: /contact/contact/new/
+    url(r'^contact/new/$', views.contact_new, name='contact_new'),
+
 ]
 
 

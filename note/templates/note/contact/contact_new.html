@@ -1,11 +1,10 @@
 {% extends 'note/base.html' %}
 
-<html>
-
-</html>
+<!-- <html>
+    <a href="{% url 'new_contact' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+</html> -->
 {% block content %}
     <h1>Contact</h1>
-    <a href="{% url 'new_contact' %}" class="top-menu"><span class="glyphicon glyphicon-envelope"></span></a>
     <form method="POST" class='post-form'>{% csrf_token %}
         {{ contact_form.as_p }}
         <button type="submit" class="save btn btn-default">Send</button>

@@ -51,18 +51,6 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'note/post/post_edit.html', {'form': form})
 
-#==================================================
-
-def new_contact(request):
-    if request.method == "POST":
-        contact_form = ContactForm(request.POST)
-        if form.is_valid():
-            contact=form.save(commit=False)
-            contact.save()
-            return render(request, 'note/contact/contact.html', {'contact_form': contact_form})
-    else:
-        contact_form = PostForm()
-    return render(request, 'note/contact/contact.html', {'contact_form': contact_form})
 
 
 # ------ python, Django, Frontend 리스트 & detail views -----
@@ -97,10 +85,8 @@ def frontend_list(request):
 
 def frontend_detail(request, pk):
     frontend_post = get_object_or_404(Post, pk=pk)
-    return render(request, 'note/frontend/frontend_detail.html', {
-        'frontend_post' : frontend_post
-        })
-# ------
+    return render(request, 'note/frontend/frontend_detail.html', {'frontend_post' : frontend_post})
+
 
 
 # [   ] def contact
@@ -110,3 +96,14 @@ def frontend_detail(request, pk):
 # [   ] 4. check the link at urls.py
 
 
+def contact_new(request):
+    if request.method == "POST":
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            contact=contact_form.save(commit=False)
+            contact.save()
+            return render(request, 'note/contact/contact_result.html', {'contact_form': contact_form})
+            #여기서는 'Thank you'나 'Success' 화면을 보여줘야 할 거 같은데?
+    else:
+        contact_form = ContactForm() # 이 부분을 PostForm으로 해두어서 계속 PostForm이 contact_new.html에 나타났던 것.
+    return render(request, 'note/contact/contact_edit.html', {'contact_form': contact_form})
