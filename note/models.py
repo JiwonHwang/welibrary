@@ -39,6 +39,11 @@ class Post(models.Model):
         return self.title
 
 
+    def approved_comments(self):
+        return self.comments.filter(approved_comment=True)
+
+
+
 class Contact(models.Model):
     name = models.CharField(max_length=30)
     email = models.EmailField(max_length=70)
@@ -63,5 +68,3 @@ class Comment(models.Model):
         return self.text
 
 
-    def approved_comments(self):
-        return self.comments.filter(approved_comment=True)

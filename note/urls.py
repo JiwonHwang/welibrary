@@ -27,12 +27,13 @@ urlpatterns = [
     # ex: /post/#/comment/
     url(r'^post/(?P<pk>[0-9]+)/comment/$', views.add_comment_to_post, name='add_comment_to_post'),
 
-    # list of each category, need to ad detail.html of each-------------------------
+    # categories-------------------------
     # ex: /python/
     url(r'^python/$', views.python_list, name='python_list'),
     # ex: /python/#
     url(r'^python/(?P<pk>[0-9]+)/$', views.python_detail, name="python_detail"),
-
+    # ex: /python/#/comment/
+    url(r'^python/(?P<pk>[0-9]+)/comment/$', views.python_add_comment_to_post, name='python_add_comment_to_post'),
 
     # ex: /django/
     url(r'^django/$', views.django_list, name='django_list'),
@@ -45,12 +46,11 @@ urlpatterns = [
     # ex: /frontend/#
     url(r'^frontend/(?P<pk>[0-9]+)/$', views.frontend_detail, name='frontend_detail'),
 
-
-
+    #---------------------------------------
     # ex: /contact/contact/new/
     url(r'^contact/new/$', views.contact_new, name='contact_new'),
 
-
+    #---------------------------------------
     # ex: /comment/#/approve/
     url(r'^comment/(?P<pk>[0-9]+)/approve/$', views.comment_approve, name='comment_approve'),
     # ex: /comment/#/remove/

@@ -7,8 +7,8 @@
                 {{ python_post.published_date }}
             </div>
             <h1><a href="{% url "note.views.python_detail" pk=python_post.pk %}">{{ python_post.title }}</a></h1>
-            <p>{{ python_post.|linebreaks }}</p>
+            <p>{{ python_post.text|linebreaks }}</p>
+            <a href="{% url 'note.views.python_detail' pk=python_post.pk %}">Comments: {{ python_post.approved_comments.count }}</a>
         </div>
     {% endfor %}
 {% endblock content %}
-
