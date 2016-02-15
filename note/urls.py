@@ -39,12 +39,16 @@ urlpatterns = [
     url(r'^django/$', views.django_list, name='django_list'),
     # ex: /django/#
     url(r'^django/(?P<pk>[0-9]+)/$', views.django_detail, name='django_detail'),
+    # ex: /django/#/comment/
+    url(r'^django/(?P<pk>[0-9]+)/comment/$', views.django_add_comment_to_post, name='django_add_comment_to_post'),
 
 
     # ex: /frontend/
     url(r'^frontend/$', views.frontend_list, name='frontend_list'),
     # ex: /frontend/#
     url(r'^frontend/(?P<pk>[0-9]+)/$', views.frontend_detail, name='frontend_detail'),
+    # ex: /frontend/#/comment/
+    url(r'^frontend/(?P<pk>[0-9]+)/comment/$', views.frontend_add_comment_to_post, name='frontend_add_comment_to_post'),
 
     #---------------------------------------
     # ex: /contact/contact/new/

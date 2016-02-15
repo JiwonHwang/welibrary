@@ -7,9 +7,8 @@
                 {{ django_post.published_date }}
             </div>
             <h1><a href="{% url "note.views.django_detail" pk=django_post.pk %}">{{ django_post.title }}</a></h1>
-            <p>{{ django_post.|linebreaks }}</p>
+            <p>{{ django_post.text|linebreaks }}</p>
+            <a href="{% url 'note.views.django_detail' pk=django_post.pk %}">Comments: {{ django_post.approved_comments.count }}</a>
         </div>
     {% endfor %}
 {% endblock content %}
-
-
