@@ -7,6 +7,12 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.navbar {
+    position: fixed;
+    width: 100%;
+}
+
+
 .container {
 }
 
