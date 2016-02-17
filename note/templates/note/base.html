@@ -62,116 +62,51 @@
     <link rel="stylesheet" href="{% static 'css/note.css' %}">
 
     <!--top menu-->
-    <style>
-    ul#menu li {
-    display:inline;
-    }
-    </style>
+
   </head>
+    <!-- Top Menu -->
+    <div class="page-header-one" style="position: fixed; width: 100%; padding:15px;">
+      <table style="width:100%; height:100%; margin:0px; padding:0px;">
+        <tr>
+          <td align="center" style="width:15%;"><h3 style="color:navy; font-style: strong;"><strong>WELIBRARY</strong></h3>
+              <style>
+              ul#menu {
+                padding: 0;
+              }
 
-  <body>
+              ul#menu li {
+                display: inline;
+              }
 
-    <!-- Static navbar -->
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+              ul#menu li a{
+                background-color: white;
+                color: navy;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 2px 2px 2px 2px;
+              }
 
-          <a class="navbar-brand" href="/">WeLibrary</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/about/">About</a></li>
-
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Python<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/python/">Python1</a></li>
-                <li><a href="/python/">python2</a></li>
-                <li><a href="/python/">python3</a></li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Django<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/django/">Django1</a></li>
-                <li><a href="/django/">Django2</a></li>
-                <li><a href="/django/">Django3</a></li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FrontEnd<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/frontend/">FrontEnd1</a></li>
-                <li><a href="/frontend/">FrontEnd2</a></li>
-                <li><a href="/frontend/">FrontEnd3</a></li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/">More</a></li>
-                <li><a href="/">More</a></li>
-                <li><a href="/">More</a></li>
-                <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Quick Links</li>
-                  <li><a href="https://djangogirls.org/seoul/" target="_blank">Django Girls  Seoul</a></li>
-                  <li><a href="http://djangogirlscodecamp.github.io/" target="_blank">Django Girls Code Camp</a></li>
-              </ul>
-            </li>
-            <li><a href="/contact/new/">Contact</a></li>
-             <!-- icons -->
-            <li>
-            {% if user.is_authenticated %}
-              <a href="{% url 'post_new' %}" ><span class="glyphicon glyphicon-plus"></span></a>
-              <a href="{% url 'post_draft_list' %}" ><span class="glyphicon glyphicon-edit"></span></a>
-              <p class="top-menu">Hello {{ user.username }}<small>(<a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a>)</small></p>
-            {% else %}
-              <a href="{% url 'django.contrib.auth.views.login' %}" ><span class="glyphicon glyphicon-lock"></span></a>
-            {% endif %}
-            </li>
-
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
-
-<!-- 컨테이터 -->
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
-                {% for post in posts %}
-                    <div class="post">
-                        <div class="date">
-                            {{ post.published_date }}
-                        </div>
-                        <h1><a href="">{{ post.title }}</a></h1>
-                        <p>{{ post.text|linebreaks }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
+              ul#menu li a:hover {
+                background-color: navy;
+              }
+              </style>
+          </td>
+          <td style="width:80%;">
+          <ul id="menu">
+            <li><a href="/"><strong>More</strong></a></li>
+            <li><a href="/"><strong>FrontEnd</strong></a></li>
+            <li><a href="/"><strong>Django</strong></a></li>
+            <li><a href="/"><strong>Python</strong></a></li>
+            <li><a href="/"><strong>About</strong></a></li>
+          </ul>
+          </td>
+        </tr>
+      </table>
     </div>
-</ul>
-</div>
-</div>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
-    <!-- 위 부분 삽입 -->
+   <!-- 위 부분 삽입 -->
     {% block content %}
     {% endblock %}
 
@@ -192,6 +127,13 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
   </body>
 </html>
 

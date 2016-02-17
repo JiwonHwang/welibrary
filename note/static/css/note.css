@@ -12,22 +12,29 @@ p {
     padding: 10px;
 }
 
-.navbar {
-    position: fixed;
-    width: 100%;
+p.one {
+/*    background-color: #CEF6F5;
+*/  border-style: solid;
+    border-color: navy transparent navy transparent;
+    padding: 100px;
+    margin: 30px;
 }
 
-.container {
-}
-
-.page-header {
-    background-color: #ff9400;
+.page-header-one {
+    background-color: white;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.page-header-two {
+    background-color: navy;
+    font: strong 15px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #0B4C5F;
+    color: navy;
     font-size: 36pt;
     text-decoration: none;
 }
@@ -52,13 +59,6 @@ h1, h2, h3, h4 {
 
 .post-form textarea, .post-form input {
     width: 80%;
-}
-
-.top-menu, .top-menu:hover, .top-menu:visited {
-    color: #380B61;
-    float: right;
-    font-size: 26pt;
-    margin-right: 20px;
 }
 
 .post {
@@ -106,7 +106,7 @@ a:active {
 table, th, td {
     border: 5px solid navy;
     border-collapse: collapse;
-    margin: 15px;
+    margin: 0px 15px 15px 15px;
     border-radius: 25px;
 
 }
@@ -114,3 +114,12 @@ th, td {
     padding: 15px;
 }
 
+ul#menu li {
+    display: inline;
+    float: right;
+}
+
+ul#menu li a:hover {
+    background-color: navy;
+    color: white;
+}
