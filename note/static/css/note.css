@@ -3,15 +3,19 @@ h1 a {
 }
 
 body {
-    background-color: #DFF0DA;
+    background-color: white;
     font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    /*border: 2px solid black;*/
+    padding: 10px;
 }
 
 .navbar {
     position: fixed;
     width: 100%;
 }
-
 
 .container {
 }
@@ -29,7 +33,8 @@ body {
 }
 
 .content {
-    margin-left: 40px;
+    margin-left: 50%;
+    margin-right: 50%;
 }
 
 h1, h2, h3, h4 {
@@ -69,5 +74,43 @@ h1, h2, h3, h4 {
 }
 
 .footer {
+    margin-top: 100px;
     margin-bottom: 0px;
 }
+
+#p01 {
+    color: blue;
+}
+
+a:link {
+    color: navy;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: navy;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: #04B4AE;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active {
+    color: 00FFFF;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+table, th, td {
+    border: 5px solid navy;
+    border-collapse: collapse;
+    margin: 15px;
+    border-radius: 25px;
+
+}
+th, td {
+    padding: 15px;
+}
+
