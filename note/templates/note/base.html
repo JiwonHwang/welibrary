@@ -21,119 +21,45 @@
 
     <title>Welibrary - djangogirlsseoul winter codecamp project</title>
 
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="navbar-static-top.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-    <!-- 아래: 원래 bootstrap에서 가져온 css file link, 지금은 내 파일 안에 있는 local note.css 파일을 읽도록 할 거임.
-    어떤지 비교해보고 수정해나가기! 그리고 codepen.io 참고해보기  -->
-    <!-- <!-- Latest compiled and minified CSS -->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
     <!-- font -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
-    <!-- sticky footer-->
-    <!-- Custom styles for this template -->
-    <link href="sticky-footer.css" rel="stylesheet">
-
     <link rel="stylesheet" href="{% static 'css/note.css' %}">
-
-    <!--top menu-->
-
   </head>
-    <!-- Top Menu -->
-    <div class="page-header-one" style="position: fixed; width: 100%; padding:15px;">
-      <table style="width:100%; height:100%; margin:0px; padding:0px;">
-        <tr>
-          <td align="center" style="width:15%;"><h3 style="color:navy; font-style: strong;"><strong>WELIBRARY</strong></h3>
-              <style>
-              ul#menu {
-                padding: 0;
-              }
 
-              ul#menu li {
-                display: inline;
-              }
 
-              ul#menu li a{
-                background-color: white;
-                color: navy;
-                padding: 10px 20px;
-                text-decoration: none;
-                border-radius: 2px 2px 2px 2px;
-              }
 
-              ul#menu li a:hover {
-                background-color: navy;
-              }
-              </style>
-          </td>
-          <td style="width:80%;">
-          <ul id="menu">
+  <body>
+  <!--Top-->
+      <div style="width: 100%; height:100%; background-color: white;">
+      <h1 style="color: #191970;"><a href="/">WELIBRARY</a></h1>
+       <nav>
+         <ul id="menu" align="right">
+            <li><a href="/python/"><strong>Python</strong></a></li>
+            <li><a href="/django/"><strong>Django</strong></a></li>
+            <li><a href="/frontend/"><strong>FrontEnd</strong></a></li>
             <li><a href="/"><strong>More</strong></a></li>
-            <li><a href="/"><strong>FrontEnd</strong></a></li>
-            <li><a href="/"><strong>Django</strong></a></li>
-            <li><a href="/"><strong>Python</strong></a></li>
-            <li><a href="/"><strong>About</strong></a></li>
-          </ul>
-          </td>
-        </tr>
-      </table>
-    </div>
+         </ul>
+       </nav>
+      </div>
+
+      <category banner>
 
 
+  <!--Contents-->
 
-   <!-- 위 부분 삽입 -->
     {% block content %}
     {% endblock %}
-
-      <!-- Begin sticky content -->
-    <footer class="footer">
-      <table id="t01" border="0px" align="right">
-        <tr>
-          <td><bold><a href="https://djangogirls.org/seoul/" target="_blank"><strong>Django Girls Seoul</strong></a></bold> Winter Code Camp Jan-Feb 2016</td>
+  <!--footer-->
+  <footer>
+    <table id="footer" style="width: 100%; margin-bottom: 20px;">
+       <tr>
+          <td style="padding-left: 15px; padding-right: 15px;"><bold><a href="https://djangogirls.org/seoul/" target="_blank"><strong>Django Girls Seoul</strong></a></bold> Winter Code Camp Jan-Feb 2016</td>
+          <td><a href="/about/"><strong>About</strong></a></td>
           <td><a href="/"><strong>Top</strong></a></td>
         </tr>
       </table>
     </footer>
-
-      <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
   </body>
 </html>
 
