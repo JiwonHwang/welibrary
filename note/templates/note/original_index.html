@@ -31,34 +31,40 @@
 
   <body>
   <!--Top-->
-  <header>
-      <div>
-         <table id="table-header">
-         <tr><td>
+  <page header>
+      <div style="position: fixed top; width: 100%; height:100%; background-color: white;">
+         <table style="margin-left: 30px"><tr><td>
          <ul id="menu">
-            <li id="top"><a href="/"><strong>WELIBRARY</strong></a></li>
+            <li><a href="/"><strong>WELIBRARY</strong></a></li>
             <li><a href="/python/">Python</a></li>
             <li><a href="/django/">Django</a></li>
             <li><a href="/frontend/">FrontEnd</a></li>
             <li><a href="/">More</strong></a></li>
           </ul>
           </td></tr>
-          </table>
+         </ul>
       </div>
-  </header>
+  </page header>
   <!--Contents-->
-  <div class="main">
     {% block content %}
     {% endblock %}
-  </div>
   <!--footer-->
+<style>
+  .footer {
+    float: bottom;
+    margin: 5px;
+    height: 15px;
+    border: 1px black;
+  }
+  </style>
   <footer>
-    <table id="table-footer">
+    <div class="footer">
+    <table style="position: fixed bottom; padding-top: 100px; width: 100%; margin-bottom: 20px;">
        <tr>
           <td><bold><a href="https://djangogirls.org/seoul/" target="_blank"><strong>Django Girls Seoul</strong></a></bold> Winter Code Camp Jan-Feb 2016</td>
           <td><a href="/about/">About</a></td>
           <td><a href="/contact/">Contact</a></td>
-          <td><a href="#top"><strong>Top</strong></a></td>
+          <td><a href="/"><strong>Top</strong></a></td>
         </tr>
       </table>
       </div>

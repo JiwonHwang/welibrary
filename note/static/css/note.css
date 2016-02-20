@@ -1,55 +1,20 @@
+/*baisc*/
+
+/*font*/
+
 body {
-    margin: 20x;
-}
+    margin: 15px;
+    margin-bottom: 40px;
+    width: 1000px;
 
-footer {
-    padding-top: 40px;
-    padding-bottom: 10px;
 }
-
 
 table {
     border-color: #191970;
     border: 5px;
 }
 
-table#top-menu {
-    align: right;
-    width: 100%;
-    height: 100%;
-    border-color: navy;
-    border: 1px;
-    padding-bottom: 0px;
-}
-
-/*base.html*/
-/* 가장 위 메뉴 */
-menu {
-    position: right;
-    font-size: 2px;
-}
-
-ul#menu {
-    padding: 0;
-}
-
-ul#menu li {
-    display: inline;
-}
-
-ul#menu li a {
-    background-color: white;
-    color: #191970;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 2px;
-}
-
-ul#menu li a:hover {
-    background-color: #191970;
-    color: white;
-}
-
+/*link*/
 a:link {
     color: #191970;
     background-color: transparent;
@@ -64,4 +29,105 @@ a:hover {
     color: white;
     background-color: #191970;
     text-decoration: none;
+}
+
+/*base.html*/
+header {
+    padding-bottom: 20px;
+    width: 1000px;
+    height:60px;
+    background-color: white;
+}
+
+menu {
+    position: right;
+}
+
+ul#menu {
+    padding: 0;
+}
+
+ul#menu li {
+    display: inline;
+}
+
+ul#menu li a {
+    background-color: white;
+    color: #191970;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+ul#menu li a:hover {
+    background-color: #191970;
+    color: white;
+}
+
+table#table-footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 60px;
+    width: 1000px;
+    float: bottom;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+}
+
+.main {
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+/*index.html*/
+p#index-bottom {
+    align: right;
+}
+
+/*contact_edit.html*/
+table#contact_form {
+    margin: 0px;
+    padding: 10px  100px 10px 50px;
+    background-color: #191970;
+    color: white;
+    border-style: none;
+    border-spacing: 15px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+/*python_list.html*/
+.box-full {
+   float: left;
+   margin: 10px;
+   padding: 10px;
+   width: 450px;
+   height: 300px;
+   border: 2px solid transparent;
+}
+
+.box-empty {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    width: 450px;
+    height: 300px;
+    border: 2px solid navy;
+    overflow: auto;
+
+}
+.box-post {
+  float: left;
+  margin: 10px;
+  padding: 10px;
+  width: 450px;
+  height: 300px;
+  border: 2px solid navy;
+  overflow: auto;
+
 }

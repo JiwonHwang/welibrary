@@ -52,7 +52,7 @@ urlpatterns = [
 
     #---------------------------------------
     # ex: /contact/contact/new/
-    url(r'^contact/new/$', views.contact_new, name='contact_new'),
+    url(r'^contact/$', views.contact_new, name='contact_new'),
 
     #---------------------------------------
     # ex: /comment/#/approve/
