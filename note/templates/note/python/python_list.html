@@ -3,46 +3,13 @@
 {% block content %}
 
 
-<div class="box-full" style="background-color:#191970; color:white;" >
-<!--      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/110px-Python-logo-notext.svg.png">
- --><h1>Python 파이썬</h1>
-    <p>https://www.python.org/</p>
+<div class="box-full">
+    <h1>Python 파이썬</h1>
 
-</div>
-
-<div class="box-empty">
-  <h2>Recommended</h2>
-  <p>Study as you please. It is just a recommendation. </p>
-        <ul style="list-style-type:square">
-          <li>Beginner</li>
-          <li>Intermediate</li>
-          <li>Advanced</li>
-        </ul>
-</div>
-
-<div class="box-empty">
-  <h2>BEGINNER</h2>
-  <p>London is the capital city of England.</p>
-  <p>It is the most populous city in the United Kingdom,
-with a metropolitan area of over 13 million inhabitants.</p>
-</div>
-
-<div class="box-empty">
-  <h2>Book</h2>
-  <p>Paris is the capital of France.</p>
-  <p>The Paris area is one of the largest population centers in Europe,
-with more than 12 million inhabitants.</p>
-</div>
-
-<div class="box-empty">
-  <h2>Mooc</h2>
-  <p>Tokyo is the capital of Japan.</p>
-  <p>It is the center of the Greater Tokyo Area,
-and the most populous metropolitan area in the world.</p>
 </div>
 
 <div class="box-post">
-    <h2>RELATED ARTICLES</h2>
+    <h2>Posts</h2>
     <p>
     {% for python_post in python_posts %}
         <div class="post">
@@ -51,12 +18,31 @@ and the most populous metropolitan area in the world.</p>
             </div> -->
             <h2><a href="{% url "note.views.python_detail" pk=python_post.pk %}">{{ python_post.title }}</a></h2>
             <p>{{ python_post.text|linebreaks }}</p>
-            <a href="{% url 'note.views.python_detail' pk=python_post.pk %}">Comments: {{ python_post.approved_comments.count }}</a>
+           <!--  <a href="{% url 'note.views.python_detail' pk=python_post.pk %}">Comments: {{ python_post.approved_comments.count }}</a> -->
         </div>
     {% endfor %}
   </p>
 </div>
 
+<div class="box-empty-half">
+  <h2>Links</h2>
+  <ul style="list-style-type:square">
+  <br>
+      <li><a href="https://www.python.org/">(Official) Python</a></li>
+      <li><a href="http://ipython.org/">IPython</li>
+      <li><a href="http://www.pythontutor.com/visualize.html#mode=edit">Python Tutor</a></li>
+  </ul>
+</div>
+
+<div class="box-empty-half">
+  <h2>Online courses</h2>
+  <ul style="list-style-type:square">
+  <br>
+      <li><a href="https://www.udacity.com/">Udacity</a></li>
+      <li><a href="https://www.edx.org/">edx</li>
+      <li><a href="https://www.coursera.org/">Coursera</a></li>
+  </ul>
+</div>
 
 {% endblock content %}
  </body>
