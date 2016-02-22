@@ -74,7 +74,7 @@ def post_remove(request, pk):
     return redirect('note.views.post_list')
 
 
-# ------ python, Django, Frontend : list, detail, add_comment_to_post -----
+# ------ Python, Django, Frontend  More: list, detail, add_comment_to_post -----
 def python_list(request):
     python_posts = Post.objects.filter(postcategory="python").filter(published_date__lte=timezone.now()).order_by('-published_date')[:5]
     return render(request, 'note/python/python_list.html', {'python_posts': python_posts})
@@ -178,6 +178,33 @@ def frontend_add_comment_to_post(request, pk):
         form = CommentForm()
     return render(request, 'note/frontend/frontend_add_comment_to_post.html', {'form': form})
 
+
+#------------------------------------------------------
+
+def more_list(request):
+    more_posts = Post.objects.filter(postcategory="more").filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'note/more/more_list.html', {'more_posts': more_posts})
+
+
+def more_detail(request, pk):
+    more_post = get_object_or_404(Post, pk=pk)
+    return render(request, 'note/more/more_detail.html', {'more_post' : more_post})
+
+def more_add_comment_to_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('note.views.more_detail', pk=post.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'note/more/more_add_comment_to_post.html', {'form': form})
+
+
+#------------------------------------------------------
 
 @login_required
 def frontend_comment_approve(request, pk):
