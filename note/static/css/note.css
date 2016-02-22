@@ -115,6 +115,9 @@ div.box-full {
    background-color:#191970;
    color:white;
 }
+div.box-full h1 {
+    color: white;
+}
 
 div.box-empty {
     float: left;
