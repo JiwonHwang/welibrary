@@ -8,6 +8,11 @@ body {
     width: 1000px;
 }
 
+
+h1 {
+    color: #191970;
+}
+
 table {
     border-color: #191970;
     border: 5px;
@@ -89,6 +94,59 @@ p#index-bottom {
     align: right;
 }
 
+div.index-main {
+    background-color:#191970;
+    width: 1000px;
+    height: 420px;
+    color:white;
+    padding:20px;
+
+}
+
+
+/*_list.html*/
+div.box-full {
+   float: left;
+   margin: 10px;
+   padding: 10px;
+   width: 1000px;
+   height: 80px;
+   border: 2px solid transparent;
+   background-color:#191970;
+   color:white;
+}
+
+div.box-empty {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    width: 456px;
+    height: 600px;
+    border: 2px solid navy;
+    overflow: auto;
+}
+
+
+div.box-empty-half {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    width: 456px;
+    height: 300px;
+    border: 2px solid navy;
+    overflow: auto;
+}
+
+div.box-post {
+  float: left;
+  margin: 10px;
+  margin-bottom: 100px;
+  padding: 10px;
+  width: 475px;
+  height: 600px;
+  border: 2px solid navy;
+  overflow: auto;
+}
 
 /*contact_edit.html*/
 table#contact_form {
@@ -103,44 +161,8 @@ table#contact_form {
     justify-content: left;
 }
 
-/*python_list.html*/
-.box-full {
-   float: left;
-   margin: 10px;
-   padding: 10px;
-   width: 1000px;
-   height: 80px;
-   border: 2px solid transparent;
-   background-color:#191970;
-   color:white;
-}
-
-.box-empty {
-    float: left;
-    margin: 10px;
-    padding: 10px;
-    width: 960px;
-    height: 300px;
-    border: 2px solid navy;
-    overflow: auto;
-}
-
-.box-empty-half {
-    float: left;
-    margin: 10px;
-    padding: 10px;
-    width: 456px;
-    height: 300px;
-    border: 2px solid navy;
-    overflow: auto;
-}
-
-.box-post {
-  float: left;
-  margin: 10px;
-  padding: 10px;
-  width: 960px;
-  height: 300px;
-  border: 2px solid navy;
-  overflow: auto;
+div.container_category_list_html {
+    background-color: yellow;
+    margin: auto;
+    width: 1000px;
 }

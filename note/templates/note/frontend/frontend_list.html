@@ -1,14 +1,52 @@
 {% extends 'note/base.html' %}
 
+
 {% block content %}
-    {% for frontend_post in frontend_posts %}
-        <div class="post">
-            <div class="date">
-                {{ frontend_post.published_date }}
-            </div>
-            <h1><a href="{% url "note.views.frontend_detail" pk=frontend_post.pk %}">{{ frontend_post.title }}</a></h1>
-            <p>{{ frontend_post.text|linebreaks }}</p>
-            <a href="{% url 'note.views.frontend_detail' pk=frontend_post.pk %}">Comments: {{ frontend_post.approved_comments.count }}</a>
-        </div>
-    {% endfor %}
+
+<div class="box-full">
+    <h1>FrontEnd 프론트엔드</h1>
+</div>
+
+<div class="box-empty">
+        <h2>Step by Step</h2>
+            <ul>
+                  <li>Start from here</li>
+                      <ul>
+                            <li><a href="http://www.freecodecamp.com/" target="_blank">Free Code Camp</a></li>
+                            <li><a href="http://www.w3schools.com/" target="_blank">w3schools</a></li>
+                            <li><a href="https://www.codecademy.com/">Codecademy</li>
+
+                      </ul>
+                  <br>
+                  <li>Useful inks</li>
+                      <ul>
+                            <li><a href="https://jsfiddle.net/" target="_blank">JSFiddle code editor</a></li>
+                            <li><a href="http://codepen.io/" target="_blank">Codepen</a></li>
+                            <li><a href="http://getbootstrap.com/">Bootstrap</li>
+
+                      </ul>
+                  <br>
+
+          </ul>
+    </div>
+
+
+    <div class="box-empty">
+        <h2>Posts</h2>
+            <p>
+                {% for frontend_post in frontend_posts %}
+                    <div class="post">
+                        <div class="date">
+                            {{ frontend_post.published_date }}
+                        </div>
+                        <h1><a href="{% url "note.views.frontend_detail" pk=frontend_post.pk %}">{{ frontend_post.title }}</a></h1>
+                        <p>{{ frontend_post.text|linebreaks }}</p>
+                        <a href="{% url 'note.views.frontend_detail' pk=frontend_post.pk %}">Comments: {{ frontend_post.approved_comments.count }}</a>
+                    </div>
+                {% endfor %}
+            </p>
+    </div>
+
+
+
 {% endblock content %}

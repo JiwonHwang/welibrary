@@ -5,44 +5,59 @@
 
 <div class="box-full">
     <h1>Python 파이썬</h1>
-
 </div>
 
-<div class="box-post">
-    <h2>Posts</h2>
-    <p>
-    {% for python_post in python_posts %}
-        <div class="post">
-           <!--  <div class="date">
-                {{ python_post.published_date }}
-            </div> -->
-            <h2><a href="{% url "note.views.python_detail" pk=python_post.pk %}">{{ python_post.title }}</a></h2>
-            <p>{{ python_post.text|linebreaks }}</p>
-           <!--  <a href="{% url 'note.views.python_detail' pk=python_post.pk %}">Comments: {{ python_post.approved_comments.count }}</a> -->
-        </div>
-    {% endfor %}
-  </p>
-</div>
+    <div class="box-empty">
+        <h2>Step by Step</h2>
+            <ul>
+                  <li>Download</li>
+                      <ul>
+                            <li><a href="https://www.python.org/" target="_blank">(Official) Python</a></li>
+                            <li><a href="http://ipython.org/" target="_blank">IPython</a></li>
+                      </ul>
+                  <br>
 
-<div class="box-empty-half">
-  <h2>Links</h2>
-  <ul style="list-style-type:square">
-  <br>
-      <li><a href="https://www.python.org/">(Official) Python</a></li>
-      <li><a href="http://ipython.org/">IPython</li>
-      <li><a href="http://www.pythontutor.com/visualize.html#mode=edit">Python Tutor</a></li>
-  </ul>
-</div>
+                 <li>Step 1: Just try! </li>
+                      <ul>
+                            <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></li>
+                            <li><a href="http://tryhelloworld.co.kr/" target="_blank">helloworld(한국어)</a></li>
+                            <li><a href="http://learnpythonthehardway.org/" target="_blank">Learn Python the Hard Way</a></li>
+                            <li><a href="http://www.pythontutor.com/visualize.html#mode=edit" target="_blank">Python Tutor</a></li>
+                     </ul>
 
-<div class="box-empty-half">
-  <h2>Online courses</h2>
-  <ul style="list-style-type:square">
-  <br>
-      <li><a href="https://www.udacity.com/">Udacity</a></li>
-      <li><a href="https://www.edx.org/">edx</li>
-      <li><a href="https://www.coursera.org/">Coursera</a></li>
-  </ul>
-</div>
+                 <br>
+
+                 <li>Step 2</li>
+                    <ul>
+                          <li><a href="https://www.coursera.org/learn/python" target="_blank">Coursera: Programming for Everybody (Getting Started with Python)
+                          <br>
+                          (First of five consecutive classes.)</a></li>
+                    </ul>
+                <br>
+
+                <li>Step 3</li>
+                    <ul>
+                          <li><a href="https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-6">edx: Introduction to Computer Science and Programming Using Python</a></li>
+                    </ul>
+          </ul>
+    </div>
+
+
+    <div class="box-empty">
+        <h2>Posts</h2>
+            <p>
+                {% for python_post in python_posts %}
+                    <div class="post">
+                       <!--  <div class="date">
+                            {{ python_post.published_date }}
+                        </div> -->
+                        <h2><a href="{% url "note.views.python_detail" pk=python_post.pk %}">{{ python_post.title }}</a></h2>
+                        <p>{{ python_post.text|linebreaks }}</p>
+                        <a href="{% url 'note.views.python_detail' pk=python_post.pk %}">Comments: {{ python_post.approved_comments.count }}</a>
+                    </div>
+                {% endfor %}
+          </p>
+    </div>
+
 
 {% endblock content %}
- </body>

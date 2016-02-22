@@ -50,6 +50,15 @@ urlpatterns = [
     # ex: /frontend/#/comment/
     url(r'^frontend/(?P<pk>[0-9]+)/comment/$', views.frontend_add_comment_to_post, name='frontend_add_comment_to_post'),
 
+
+    # ex: /more/
+    url(r'^more/$', views.more_list, name='more_list'),
+    # ex: /more/#
+    url(r'^more/(?P<pk>[0-9]+)/$', views.more_detail, name='more_detail'),
+    # ex: /more/#/comment/
+    url(r'more/(?P<pk>[0-9]+)/$', views.more_add_comment_to_post, name='more_add_comment_to_post'),
+
+
     #---------------------------------------
     # ex: /contact/contact/new/
     url(r'^contact/$', views.contact_new, name='contact_new'),
