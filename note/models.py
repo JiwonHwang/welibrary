@@ -14,10 +14,12 @@ class Post(models.Model):
     PYTHON = "python"
     DJANGO = "django"
     FRONTEND = "frontend"
+    MORE = "more"
     POSTCATEGORY = (
         (PYTHON, 'python'),
         (DJANGO, 'django'),
         (FRONTEND, 'frontend'),
+        (MORE, 'more'),
         )
     postcategory = models.CharField(max_length=10, choices=POSTCATEGORY, default=PYTHON)
 
