@@ -1,11 +1,16 @@
 /*baisc*/
 
 /*font*/
+h1 {
+    color: #04B4AE;
+    font-family: 'roboto';
+}
 
 body {
     margin: 15px;
     margin-bottom: 40px;
     width: 1000px;
+    font-family: 'roboto';
 }
 
 
@@ -155,8 +160,8 @@ div.box-post {
 table#contact_form {
     margin: 0px;
     padding: 10px  100px 10px 50px;
-    background-color: #191970;
-    color: white;
+    background-color: #ffffff;
+    color: #191970;
     border-style: none;
     border-spacing: 15px;
     display: flex;
