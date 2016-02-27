@@ -7,7 +7,7 @@ We shared resources in slack, but had to search to find it again. I needed it fo
 
 #Using 
 - djnago 1.8.8 : web framwork
-- pythonanywhere : deplo
+- pythonanywhere : deployment
 
 # Features 
 - post
