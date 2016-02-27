@@ -15,7 +15,7 @@ We shared resources in slack, but had to search to find it again. I needed it fo
 - contact
  
 # Features to add
-- registration 
+- registration (+ member profile, + registration by facebook, google?)
 - click calendar - connects to that day's post(s)
 - tags (+ search tag)
 
