@@ -22,8 +22,3 @@ We shared resources in slack, but had to search to find it again. I needed it fo
 
 # Improve frontend 
 - Make it interactive 
-
-# To do 
-- code review 
-
-
