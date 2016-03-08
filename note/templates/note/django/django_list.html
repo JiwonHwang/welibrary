@@ -1,0 +1,57 @@
+{% extends 'note/base.html' %}
+
+<!-- http://www.unixstickers.com/image/cache/data/stickers/django/dj-neg2.sh-600x600.png -->
+
+
+
+{% block content %}
+
+<div class="box-full">
+    <h1>Django 장고</h1>
+</div>
+
+<div class="box-empty">
+        <h2>Step by Step</h2>
+            <ul>
+                  <li>Download</li>
+                        <ul>
+                            <li><a href="https://www.djangoproject.com/download/" target="_blank">Django</a></li>
+                            <li>Code editor (i.e.
+                                <a href="https://www.sublimetext.com/" target="_blank">sublime</a>,
+                                <a href="https://atom.io/" target="_blank">atom</a>)</li>
+                        </ul>
+                  <br>
+                  <li>Start from here</li>
+                        <ul>
+                            <li><a href="http://tutorial.djangogirls.org/" target="_blank">Django Girls Tutorial</a></li>
+                            <li><a href="https://www.djangoproject.com/" target="_blank">Django > Documentation > Tutorials</a></li>
+                        </ul>
+                  <br>
+                  <li>To study more in depth</li>
+                        <ul>
+                            <li><a href="https://www.twoscoopspress.com/" target="_blank">Two Scoops of Django (1.8)</a></li>
+                            <li>Start your own project!
+                                <ul>
+                                    <li><a href="https://themeteorchef.com/blog/planning-your-own-curriculum/">Planning Your Own Curriculum</a></li>
+                                    <li>...</li>
+                                </ul>
+
+                        </ul>
+
+          </ul>
+    </div>
+
+<div class="box-empty">
+    <h1>Posts</h1>
+    {% for django_post in django_posts %}
+        <div class="post">
+            <div class="date">
+                {{ django_post.published_date }}
+            </div>
+            <h1><a href="{% url "note.views.django_detail" pk=django_post.pk %}">{{ django_post.title }}</a></h1>
+            <p>{{ django_post.text|linebreaks }}</p>
+            <a href="{% url 'note.views.django_detail' pk=django_post.pk %}">Comments: {{ django_post.approved_comments.count }}</a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock content %}

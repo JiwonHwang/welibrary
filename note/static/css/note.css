@@ -1,0 +1,176 @@
+/*baisc*/
+
+/*font*/
+h1 {
+    color: #04B4AE;
+    font-family: 'roboto';
+}
+
+body {
+    margin: 15px;
+    margin-bottom: 40px;
+    width: 1000px;
+    font-family: 'roboto';
+}
+
+
+h1 {
+    color: #191970;
+}
+
+table {
+    border-color: #191970;
+    border: 5px;
+}
+
+/*link*/
+a:link {
+    color: #191970;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #191970;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    background-color: #191970;
+    text-decoration: none;
+}
+
+/*base.html*/
+header {
+    padding-bottom: 20px;
+    width: 1000px;
+    height:60px;
+    background-color: white;
+}
+
+menu {
+    position: right;
+}
+
+ul#menu {
+    padding: 0;
+}
+
+ul#menu li {
+    display: inline;
+}
+
+ul#menu li a {
+    background-color: white;
+    color: #191970;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+ul#menu li a:hover {
+    background-color: #191970;
+    color: white;
+}
+
+table#table-footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 60px;
+    width: 1000px;
+    float: bottom;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+}
+
+.main {
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+/*index.html*/
+p#index-bottom {
+    align: right;
+}
+
+div.index-main {
+    background-color:#191970;
+    width: 1000px;
+    height: 420px;
+    color:white;
+    padding:20px;
+
+}
+
+
+/*_list.html*/
+div.box-full {
+   float: left;
+   margin: 10px;
+   padding: 10px;
+   width: 1000px;
+   height: 80px;
+   border: 2px solid transparent;
+   background-color:#191970;
+   color:white;
+}
+div.box-full h1 {
+    color: white;
+}
+
+div.box-empty {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    width: 456px;
+    height: 600px;
+    border: 2px solid navy;
+    overflow: auto;
+}
+
+
+div.box-empty-half {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    width: 456px;
+    height: 300px;
+    border: 2px solid navy;
+    overflow: auto;
+}
+
+div.box-post {
+  float: left;
+  margin: 10px;
+  margin-bottom: 100px;
+  padding: 10px;
+  width: 475px;
+  height: 600px;
+  border: 2px solid navy;
+  overflow: auto;
+}
+
+/*contact_edit.html*/
+table#contact_form {
+    margin: 0px;
+    padding: 10px  100px 10px 50px;
+    background-color: #ffffff;
+    color: #191970;
+    border-style: none;
+    border-spacing: 15px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+div.container_category_list_html {
+    background-color: yellow;
+    margin: auto;
+    width: 1000px;
+}

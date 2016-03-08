@@ -1,0 +1,33 @@
+{% extends 'note/base.html' %}
+
+{% block content %}
+        <div class="box-full">
+        <h1>Contact</h1>
+        </div>
+        <table id="contact_form">
+            <tr>
+                <th>Name</th>
+                <td>{{ contact_form.name }}</td>
+            </tr>
+             <tr>
+                <th>Email</th>
+                <td>{{ contact_form.email }}</td>
+            </tr>
+             <tr>
+                <th>Subject</th>
+                <td>{{ contact_form.subject }}</td>
+            </tr>
+             <tr>
+                <th>Message</th>
+                <td>{{ contact_form.message }}</td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <button type="submit" class="save btn btn-default" style="float: right;">Submit</button>
+                </td>
+            </tr>
+        </table>
+{% endblock %}
+

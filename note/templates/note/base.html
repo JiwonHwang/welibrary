@@ -1,0 +1,68 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="ko", "KR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="kewords" content="django, python, welibrary, djangogirlsseoul, djangogirls"
+    <meta name="description" content="Information library for Django Girls Seoul">
+    <meta name="author" content="Jiwon Hwang">
+    <meta http-equiv="refresh" content="30">
+    <!-- favocion generator http://www.favicon-generator.org/ [2]-->
+    <link rel="shortcut icon" href="{% static 'image/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" type="image/png" href="{% static 'image/favicon.ico' %}">
+    <!--google font-->
+     <link href="http://fonts.googleapis.com/css?family=Maven Pro&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    <title>Welibrary - djangogirlsseoul winter codecamp project</title>
+
+    <!-- font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="{% static 'css/note.css' %}">
+  </head>
+
+
+
+  <body>
+  <!--Top-->
+  <header>
+      <div>
+         <table id="table-header">
+         <tr><td>
+         <ul id="menu">
+            <li id="top"><a href="/"><strong>WELIBRARY</strong></a></li>
+            <li><a href="/python/">Python</a></li>
+            <li><a href="/django/">Django</a></li>
+            <li><a href="/frontend/">FrontEnd</a></li>
+            <li><a href="/more/">More</strong></a></li>
+          </ul>
+          </td></tr>
+          </table>
+      </div>
+  </header>
+  <!--Contents-->
+  <div class="main">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <!--footer-->
+  <footer>
+    <table id="table-footer">
+       <tr>
+          <td><bold><a href="https://djangogirls.org/seoul/" target="_blank"><strong>Django Girls Seoul</strong></a></bold> Winter Code Camp Jan-Feb 2016</td>
+          <td><a href="/about/">About</a></td>
+          <td><a href="/contact/">Contact</a></td>
+          <td><a href="#top"><strong>Top</strong></a></td>
+        </tr>
+      </table>
+      </div>
+    </footer>
+  </body>
+</html>
+
+

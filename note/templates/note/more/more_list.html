@@ -1,0 +1,30 @@
+{% extends 'note/base.html' %}
+
+{% block content %}
+
+<div class="box-full">
+    <h1>More 그 외 다른 자료들</h1>
+</div>
+
+<div class="box-empty">
+</div>
+
+
+    <div class="box-empty">
+        <h2>Posts</h2>
+            <p>
+                {% for more_post in more_posts %}
+                    <div class="post">
+                       <!--  <div class="date">
+                            {{ more_post.published_date }}
+                        </div> -->
+                        <h2><a href="{% url "note.views.more_detail" pk=more_post.pk %}">{{ more_post.title }}</a></h2>
+                        <p>{{ more_post.text|linebreaks }}</p>
+                        <a href="{% url 'note.views.more_detail' pk=more_post.pk %}">Comments: {{ more_post.approved_comments.count }}</a>
+                    </div>
+                {% endfor %}
+          </p>
+    </div>
+
+
+{% endblock content %}
