@@ -24,6 +24,31 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="{% static 'css/note.css' %}">
+
+    <!--tinymce text editor https://www.tinymce.com/docs/get-started/first-steps/-->
+        <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+         <script type="text/javascript">
+          tinymce.init({
+            selector: '.tinymce',
+            plugins: 'code',
+            toolbar: 'code',
+            menubar: false,
+            plugins: 'advlist',
+            theme: 'modern',
+            width: 600,
+            height: 300,
+            plugins: [
+              'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+              'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+              'save table contextmenu directionality emoticons template paste textcolor'
+            ],
+            content_css: 'css/content.css',
+            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
+            advlist_bullet_styles: 'square',
+            advlist_number_styles: 'lower-alpha,lower-roman,upper-alpha,upper-roman'
+          });
+        </script> 
+        
   </head>
 
 
