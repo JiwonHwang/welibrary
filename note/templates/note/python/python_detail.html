@@ -9,7 +9,7 @@
 
          <h1>{{ python_post.title }}</h1>
          <p>{{ python_post.published_date }}</p>
-         <p>{{ python_post.content|linebreaks }}</p>
+         <p>{{ python_post.content|safe }}</p>
          <p>{{ python_post.link }}</p>
          <p></p>
          <hr>

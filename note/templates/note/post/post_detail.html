@@ -14,7 +14,7 @@
 
          <h1>{{ post.title }}</h1>
          <p>{{ post.published_date }}</p>
-         <p>{{ post.content|linebreaks }}</p>
+         <p>{{ post.content|safe }}</p>
          <p>{{ post.link }}</p>
      </div>
 

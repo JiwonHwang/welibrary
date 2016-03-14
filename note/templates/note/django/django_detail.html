@@ -7,7 +7,7 @@
         {% endif %}
          <h1>{{ django_post.title }}</h1>
          <p>{{ django_post.published_date }}</p>
-         <p>{{ django_post.content|linebreaks }}</p>
+         <p>{{ django_post.content|safe }}</p>
          <p>{{ django_post.link }}</p>
      </div>
 

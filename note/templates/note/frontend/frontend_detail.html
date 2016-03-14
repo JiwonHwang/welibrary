@@ -7,7 +7,7 @@
         {% endif %}
          <h1>{{ frontend_post.title }}</h1>
          <p>{{ frontend_post.published_date }}</p>
-         <p>{{ frontend_post.content|linebreaks }}</p>
+         <p>{{ frontend_post.content|safe }}</p>
          <p>{{ frontend_post.link }}</p>
      </div>
 
