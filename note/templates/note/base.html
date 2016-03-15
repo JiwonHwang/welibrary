@@ -18,6 +18,8 @@
     <!--google font-->
      <link href="http://fonts.googleapis.com/css?family=Maven Pro&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
+     <!--normalize css in any devide https://github.com/necolas/normalize.css-->
+     <link rel ="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css">
     <title>Welibrary - djangogirlsseoul winter codecamp project</title>
 
     <!-- font -->
@@ -47,8 +49,8 @@
             advlist_bullet_styles: 'square',
             advlist_number_styles: 'lower-alpha,lower-roman,upper-alpha,upper-roman'
           });
-        </script> 
-        
+        </script>
+
         <!--bootstrap-->
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -65,8 +67,18 @@
   <body>
   <!--Top-->
   <header>
-      <div>
-         <table id="table-header">
+      <!-- <div class="page-header">
+            {% if user.is_authenticated %}
+                <a href="/" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="/" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                <p class="top-menu">Hello {{ user.username }}<small>(<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</p>
+            {% else %}
+                <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+            {% endif %}
+                <h1><a href="/">Jiwon - Coding Blog</a></h1>
+        </div>
+      <div> -->
+      <!--    <table id="table-header">
          <tr><td>
          <ul id="menu">
             <li id="top"><a href="/"><strong>WELIBRARY</strong></a></li>
@@ -75,9 +87,17 @@
             <li><a href="/frontend/">FrontEnd</a></li>
             <li><a href="/more/">More</strong></a></li>
           </ul>
-          </td></tr>
-          </table>
+          </td></tr> -->
+      <div class="base-nav">
+          <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="/">WELIBRARY</a></li>
+            <li role="presentation"><a href="/python/">Python</a></li>
+            <li role="presentation"><a href="/django/">Django</a></li>
+            <li role="presentation"><a href="/frontend/">FrontEnd</a></li>
+            <li role="presentation"><a href="/more/">More</a></li>
+          </ul>
       </div>
+
   </header>
   <!--Contents-->
   <div class="main">
