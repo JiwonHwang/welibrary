@@ -50,9 +50,9 @@
                        <!--  <div class="date">
                             {{ python_post.published_date }}
                         </div> -->
-                        <h2><a href="{% url "note.views.python_detail" pk=python_post.pk %}">{{ python_post.title }}</a></h2>
+                        <h2><a href="{% url "note:python_detail" pk=python_post.pk %}">{{ python_post.title }}</a></h2>
                         <p>{{ python_post.text|linebreaks }}</p>
-                        <a href="{% url 'note.views.python_detail' pk=python_post.pk %}">Comments: {{ python_post.approved_comments.count }}</a>
+                        <a href="{% url 'note:python_detail' pk=python_post.pk %}">Comments: {{ python_post.approved_comments.count }}</a>
                     </div>
                 {% endfor %}
           </p>

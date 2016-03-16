@@ -76,9 +76,7 @@ def post_remove(request, pk):
 
 # ------ Python, Django, Frontend  More: list, detail, add_comment_to_post -----
 def python_list(request):
-    python_posts = Post.objects.filter(postcategory="python").
-                    filter(published_date__lte=timezone.now()).
-                    order_by('-published_date')[:5]
+    python_posts = Post.objects.filter(postcategory="python").filter(published_date__lte=timezone.now()).order_by('-published_date')[:5]
     return render(request, 'note/python/python_list.html', {'python_posts': python_posts})
 
 
